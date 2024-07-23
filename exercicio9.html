@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 9 || js</title>
+</head>
+<body>
+    <script>
+        /*Escrever um algoritmo que lê uma quantidade não informada de dados de pessoas
+        que estão sendo monitoradas no posto de saúde. Para cada pessoa é anotada o sexo
+        (M ou F) e a altura (em metros), que é fornecida via teclado, sendo que a altura igual
+        a zero informa o final da leitura. Armazenar as informações em vetores e
+        posteriormente, calcule e escreva:
+        a. A maior altura informada,
+        b. A média das alturas das mulheres,
+        c. A quantidade de homens,
+        d. A menor altura dos homens*/
+
+        var pessoas = []; //variavel que recebe sexo e altura;
+        var maior_altura = 0; //variavel que contem maior altura;
+        var media_feminina = 0; //variavel que guarda a média feminina;
+        var altura; //variavel que recebe os valores de alturas;
+        var sexo; //vaiavel que recebe os valores de sexo;
+        var quantidadeF = 0; //variavel que soma a quantidade do sexo feminino;
+        var alturas_femininas = 0; //variavel que recebe as alturas femininas;
+        var quantidadeM = 0; //variavel que recebe quantidade de homens;
+        var menorMasc = Infinity; //variavel que verifica a menor altura masculina;
+        
+        //algoritmo usado para ler entrada de de dados.
+        do{
+            altura =parseFloat(prompt("Digite a altura em metros, ou, 0 (zero) para encerrar."))
+            while(altura != parseFloat(altura)){
+                alert("Digite uma altura valida!!");
+                altura = parseFloat(prompt("Digite a altura em metros:"))
+            };
+            if(altura == 0)break;
+
+            sexo = prompt("Digite 'M' para masculino e 'F' para feminino.").toLowerCase();
+            while(sexo !== 'm' && sexo !== 'f'){
+                alert("Digite 'M' ou 'F'!");
+                sexo = prompt("Digite 'M' para masculino e 'F' para feminino.").toLowerCase();
+            };
+            pessoas.push({altura, sexo});
+        }while(altura !== 0);
+
+        //medindo a maior altura infomada.
+        for(let i = 0; i < pessoas.length; i++){
+            if(pessoas[i].altura > maior_altura){
+                maior_altura = pessoas[i].altura;
+            }else{
+                maior_altura = maior_altura
+            };
+        };
+        
+        //medindo média feminina.
+        for (let i = 0; i < pessoas.length; i++) {
+            if(pessoas[i].sexo == "f"){
+                alturas_femininas =alturas_femininas + pessoas[i].altura;
+                quantidadeF = quantidadeF +1;
+            };
+        }
+        media_feminina = alturas_femininas / quantidadeF;
+
+        //medindo quantidade de homens.
+        for(let i = 0; i < pessoas.length; i++){
+            if(pessoas[i].sexo == 'm'){
+                quantidadeM = quantidadeM + 1;
+            }
+        };
+
+        //verificando menor altura dos homens;
+        for(let i = 0; i < pessoas.length; i++){
+            if(pessoas[i].sexo == 'm'){
+                if(pessoas[i].altura < menorMasc){
+                    menorMasc = pessoas[i].altura
+                };
+            }else{
+                menorMasc = menorMasc
+            };
+        }
+        
+
+
+        console.log("A maior altura informada é:", maior_altura);
+        console.log("A média feminina é:", media_feminina);
+        console.log("A quantidade Masculina é:", quantidadeM);
+        console.log("A menor altura masculina é: ", menorMasc);
+
+    </script>
+        

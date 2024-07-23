@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 8 || js</title>
+</head>
+<body>
+
+    <script>
+        /* Escreva um algoritmo que permita a leitura dos nomes de 10 pessoas e armazene-os
+        nomes lidos em um vetor. Após isto, o algoritmo deve permitir a leitura de mais 1 nome
+        qualquer de pessoa e depois escrever a mensagem ACHEI, se o nome estiver entre
+        os 10 nomes lidos anteriormente (guardados no vetor), ou NÃO ACHEI caso contrário*/
+        
+        var nomes = [];
+        var nome_procurado;
+        var resultado_busca;
+
+        //algoritmo que permite a leitura de 10 nomes.
+        for( let i = 0; i < 10; i++){
+            let nome = prompt("Digite um nome: ")
+            nomes.push(nome);
+        };
+        console.log(nomes)
+        
+        //algoritmo que procura um nome especifico.
+        nome_procurado = prompt("Digite um nome a se procurado.")
+        nomes.forEach(nomes => {
+            if (nomes === nome_procurado){
+                resultado_busca = nome_procurado;
+            }
+        });
+        if (resultado_busca === nome_procurado){
+            console.log("ACHEI")
+        }else{
+            console.log("NÃO ACHEI")
+        };
+    </script>
+    
+</body>
+</html>

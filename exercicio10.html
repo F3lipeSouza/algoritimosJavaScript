@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 10 || js</title>
+</head>
+<body>
+    <script>
+        /* Escrever um algoritmo que lê uma quantidade informada inicialmente de notas de
+        alunos da disciplina de Lógica. Para cada aluno são lidas quatro (4) notas variando de
+        zero (0) a dez (10). Para ser aprovado o aluno necessita de média igual ou superior a
+        seis (6). Ler as notas, calcular a média e armazenar em uma matriz (Vetor
+        bidimensional). Considere o índice da linha da matriz como o número do aluno na
+        chamada. Após o cálculo da média, ler os dados e escrever: “O Aluno y foi Aprovado
+        (ou Reprovado) com média x,xx”. No final informar:
+        a. quantos alunos foram aprovados,
+        b. quantos alunos foram reprovados,
+        c. qual a porcentagem de alunos aprovados*/
+
+        let alunos = [];//matriz que armazena dados dos alunos;
+        let notas = [];//variavel que armazena as 4 notas de cada aluno;
+        let media;//variavel que armazena a media do aluno;
+        let continuar = Boolean;//variavel usada para lançar nota par mais alunos ou parar;
+        let aprovados = 0;//lê a quantidade de aprovados;
+        let reprovados = 0;//lê a quantidade de reprovados;
+        let porcAprovados;//grava a porcentagem de alunos aprovados;
+
+        //algoritmo que lê e grava as notas dos alunos(os alunos são representados pelo número da linha da matriz);
+        do{
+            for(let i = 0; notas.length < 4; i++){
+            let nota =parseFloat(prompt("Insira a nota do aluno"));
+            if(nota >=0 && nota <=10){
+                notas.push(nota);  
+            }
+            while(nota < 0 || nota >10) {
+                    alert("Digite uma nota válida!!");
+                    break;  
+                };
+            }        
+        alunos.push(notas);
+        notas = [];
+        continuar = confirm("Deseja lançar a nota do próximo aluno?");
+        }while(continuar != false);
+
+
+        //algoritmo que informa a média do aluno e informa acrescenta quantidade a aprovados ou reprovados;
+        for(let i = 0; i < alunos.length; i++){
+            media = 0;
+            for(let j = 0; j < 4; j++){
+                media =(media + alunos[i][j]);
+            }
+            media = media / 4;
+            if(media >= 6){
+                alunos[i].push("Aluno aprovado com média de:",media);
+                aprovados = aprovados + 1;
+            }else{
+                alunos[i].push("Aluno reprovado com média de:",media);
+                reprovados = reprovados + 1;
+            }
+        }
+
+        //calculando o percentual de aprovados;
+        porcAprovados = (aprovados * 100) / (aprovados + reprovados);
+        
+        
+        console.log("A quantidade de alunos aprovados é:", aprovados);
+        console.log("A quanidade de alunos reprovados é:", reprovados);
+        console.log("A porcentagem de alunos aprovados é:", new Intl.NumberFormat("pt-br",{style:"percent"}).format(porcAprovados));
+
+        
+        </script>
+</body>
+</html>

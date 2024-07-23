@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2 || js</title>
+</head>
+<body>
+    
+    <script>
+        /*. Uma revendedora de carros usados paga a seus funcionários vendedores um salário
+        fixo por mês, mais uma comissão também fixa para cada carro vendido e mais 5% do
+        valor das vendas por ele efetuadas. Escrever um algoritmo que leia o número de carros
+        por ele vendidos, o valor total de suas vendas, o salário fixo e o valor que ele recebe
+        por carro vendido. Calcule e escreva o salário final do vendedor*/
+
+        var salariofixo = 3500
+        var carrosvendidos = 0
+        var comissaofixa = 300
+        var percvendas = 5
+        var valortotalvendas = 0
+        var valorcarros = [10000, 56000, 23000, 56000, 47000, 142000, 32000, 24000]
+
+        //algoritmo para descobrir quantos carros foram vendidos, e sua comissão fixa por carros;
+       for (let i = 0; i < valorcarros.length; i++) {
+            carrosvendidos = carrosvendidos + 1;
+       }
+        comissaofixa = comissaofixa * carrosvendidos;
+
+        //calculo do percentual do valor de cada carro vendido;
+
+        for (let i = 0; i < valorcarros.length; i++) {
+            valortotalvendas = valortotalvendas + (percvendas / 100 * valorcarros[i]);
+        }
+
+        // calculando o salario no final de mês;
+        var salariofinal = salariofixo + comissaofixa +valortotalvendas;
+        console.log("O salario desse vendedor no final do mês será de: ", new Intl.NumberFormat("pt-BR", {style:"currency", currency:"BRL"}).format(salariofinal))
+
+    </script>
+
+</body>
+</html>

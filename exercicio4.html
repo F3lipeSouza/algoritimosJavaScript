@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 4 || js</title>
+</head>
+<body>
+    <script>
+        /*Escreva um algoritmo que permita que o professor digite as notas da 1a. e 2a.
+        avaliações de vários alunos, um aluno de cada vez. calcule e imprima a média
+        (simples) desse aluno. Só devem ser aceitos valores válidos durante a leitura (0 a 10)
+        para cada nota. Após apresentar a media calculada, o algoritmo deverá perguntar se
+        o professor deseja continuar calculando a media para outros alunos. Se a resposta for
+        ‘SIM’, o algoritmo continua, caso contrário, o algoritmo finaliza*/
+        
+        var notas = ("primeiranota", "segundanota", "notamedia");
+        var continuar = new Boolean
+
+        do {
+            //algoritmo para professor dar entrada na primeira e segunda nota com o valor de 0 á 10.
+           do { 
+            primeiranota = prompt("Qual a primeira nota do aluno? ")
+            if (primeiranota > 10 || primeiranota < 0){
+                alert("Insira uma nota válida!!!")
+            }else{alert("nota salva!") } 
+
+           } while (primeiranota > 10 || primeiranota < 0);
+        
+           do {
+            segundanota = prompt("Qual a segunda nota do aluno? ")
+            if(segundanota > 10 || segundanota < 0){
+                alert("Insira uma nota válida!!!")
+            }else{alert("Nota salva")}
+
+           }while (segundanota > 10 || segundanota < 0);
+
+        //algoritmo que calcula a média simples do aluno.
+         notamedia = ((parseInt(primeiranota) + parseInt(segundanota)) / 2);
+            console.log("A nota media do aluno é:", notamedia);
+
+        //algoritmo para continuar ou não
+          continuar = confirm("Deseja lançar nota para o proximo aluno?")
+        } while (continuar != false);
+        
+       
+        
+
+            
+        
+
+        
+    </script>
+    
+</body>
+</html>

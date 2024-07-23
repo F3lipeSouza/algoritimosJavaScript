@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 6 || jst</title>
+</head>
+<body>
+
+    <script>
+    /*Escrever um algoritmo que lê a quantidade informada de pessoas que não estão sendo
+    monitoradas no posto de saúde. Para cada pessoa é anotada o peso e a altura (em
+    metros), que é fornecida pelo usuário, sendo que o peso igual a zero informa o final
+    da leitura. Calcule e escreva:
+    a. A maior altura informada,
+    b. A menor altura informada,
+    c. A média dos pesos informados*/
+    
+    var maiorAltura = 0;
+    var menorAltura = Infinity;
+    var somaPesos = 0;
+    var quantidadePessoas = 0;
+
+    //algoritmo para receber entrada de usuario.
+    while (true) {
+        let peso = parseFloat(prompt("Informe o peso da pessoa (ou 0 para finalizar): "));
+        if (peso === 0) {
+            break;
+        }
+
+        let altura = parseFloat(prompt("Informe a altura da pessoa (em metros): "));
+
+        if (altura > maiorAltura) {
+            maiorAltura = altura;
+        }
+
+        if (altura < menorAltura) {
+            menorAltura = altura;
+        }
+
+        somaPesos += peso;
+        quantidadePessoas += 1;
+    }
+    //calculo de média
+    let mediaPesos = quantidadePessoas > 0 ? somaPesos / quantidadePessoas : 0;
+
+    console.log(`A maior altura informada: ${maiorAltura} metros`);
+    console.log(`A menor altura informada: ${menorAltura} metros`);
+    console.log(`A média dos pesos informados: ${mediaPesos} kg`);
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 7 || js</title>
+</head>
+<body>
+    <script>
+        /*Escrever um algoritmo que lê cinco números inteiros, um de cada vez, armazena os
+        números lidos em um vetor e a partir da leitura do vetor imprime qual é o maior e o
+        menor dos números lidos e também a soma dos números lidos*/
+
+        var numeros = []
+        var menor 
+        var maior 
+        var soma 
+
+        //algoritmo para inserir 5 numeros.
+       for (let i = 0; i < 5; i++) {
+        let numero = parseInt(prompt("Digite um numero: "))
+        numeros.push(numero)
+       };
+       console.log(numeros);
+
+       //algoritmo que lê o menor número.
+       menor = numeros[0]
+       for (let i = 0; i < numeros.length; i++) {
+        if (numeros[i] < menor) {
+            menor = numeros[i];
+        }else{
+            menor = menor
+        };
+       }
+       console.log("O menor numero é: ", menor);
+
+       //algoritmo que lê o maior número.
+       maior = numeros[0];
+       for(let i = 0; i < numeros.length; i++){
+        if (numeros[i] > maior) {
+            maior = numeros[i];
+        }else{
+            maior = maior
+        };
+       }
+       console.log("O maior número é: ", maior);
+       //algoritmo que soma todos os valores.
+       soma = 0
+       for (let i = 0; i < numeros.length; i++) {
+        soma = soma + numeros[i];
+       };
+        console.log("A soma de todos os numeros é: ", soma);
+
+    </script>
+</body>
+</html>

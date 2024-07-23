@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicios js || trilha 3</title>
+</head>
+<body>
+
+    <script>
+        /*O custo de um carro novo ao consumidor é a soma do custo de fábrica com a
+        porcentagem do distribuidor e dos impostos (aplicados ao custo de fábrica). Supondo
+        que o percentual do distribuidor seja de 28% e os impostos de 45%, escrever um
+        algoritmo para ler o custo de fábrica de um carro, calcular e escrever o custo final ao
+        consumidor.*/
+
+        var preçofabrica = 40000;
+        var percdistribuidor = 28;
+        var impostos = 45;
+        var valorfinal = 0
+        
+        //algoritmo para calcular o valor das porcentagens somadas ao preço de fabrica.
+        percdistribuidor = percdistribuidor / 100 * preçofabrica;
+        console.log("O valor acrescentado em razão do percentual do distribuidor é: ", percdistribuidor);
+
+        impostos = impostos / 100 * preçofabrica;
+        console.log("O valor dado em razão de impostos é: ", impostos);
+
+        //algorito com o valor final do carro.
+        valorfinal = preçofabrica + percdistribuidor + impostos;
+        console.log("O valor final do carro é:", new Intl.NumberFormat("pt-BR", {style: "currency", currency: "BRL"}).format(valorfinal));
+       
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+ 
